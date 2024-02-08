@@ -1,0 +1,46 @@
+Using Github extension in VS code
+https://www.youtube.com/watch?v=i_23KUAEtUM&t=280s
+
+
+
+-- to check your current file changes
+git status 
+
+-- to check or compare the file
+git diff filename
+
+
+**************************************
+***********For Pushing the code*******
+**************************************
+
+-- to add all your file changes
+git add .
+
+-- to commit your changes
+git commit -m "a simple explaination about your changes so you will know what you change as part of this commit"
+
+-- to push your changes to remote repo
+git push origin master
+
+Note - replace master with branchname that you have
+
+***************************************
+***************************************
+***************************************
+
+
+****************************************
+********Advance commands****************
+****************************************
+
+
+-- to check which remote directory you are connected to
+git remote -v
+
+-- to add/change remote directory address
+git remote add origin https://github.com/harshgurm/fsbootcampjan24.git
+
+
+-- to roll back to previous commit
+git reset --hard version id
