@@ -20,6 +20,9 @@ git add .
 -- to commit your changes
 git commit -m "a simple explaination about your changes so you will know what you change as part of this commit"
 
+-- to get the latest code from your repo(assuming its name is master otherwise replace the name master with your branch name)
+git pull origin master
+
 -- to push your changes to remote repo
 git push origin master
 
@@ -28,6 +31,14 @@ Note - replace master with branchname that you have
 ***************************************
 ***************************************
 ***************************************
+
+-- to create a new branch
+git checkout -b your_name_branch_name
+
+**************************************
+
+
+
 
 
 ****************************************
