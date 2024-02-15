@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    function validation(){
+        var fname = document.forms['user_form']['fname_name'].value;
+
+        if(fname == ''){
+            // alert('Name is required');
+            document.getElementById('name_error').style.display = 'inline';
+            return false;
+        }
+        
+    }
+  </script>
+</head>
+<body>
+    <form name="user_form" onsubmit="return validation()" method="POST">
+        First Name: <input type="text" id="fname_id" name="fname_name"><br>
+        <span id="name_error" style="color:red;display: none;">Name is required</span><br>
+        Password: <input type="password" id="pass_id" name="pass_name"><br>
+        <input type="submit">
+    </form>
+
+    <!-- To DO -->
+    <!-- Practice adding forms either on model.html 
+    or 
+    create a new page for sign up without any bootstrap and practice form submission
+    keep track of your error and ask me tomorrow -->
+
+</body>
+</html>

@@ -3,40 +3,62 @@
     <head>
         <title>Harshvir Singh Gurm</title>
     </head>
+    <script>
+        window.onload=function(){
+            // to get it based on id
+            const para = document.getElementById('paragraph');
+            console.log(para);
+    
+            // to get it based on tag name which is p in this case
+            var all_para = document.getElementsByTagName('p');
+            console.log(all_para[1]);
+    
+            // to get it based on class name 
+            var class_para = document.getElementsByClassName('class_para');
+            console.log(class_para);
+    
+            // document.getElementById('paragraph').innerHTML = " I am trying to change the paragraph";
+    
+            //other way of writing the above ^ ^
+            
+    
+            document.getElementsByTagName('p')[0].innerHTML = 'Now this will change the text for this particular one only';
+            document.getElementsByTagName('p')[1].innerHTML = 'Now change the text for second one';
+    
+            para.innerHTML = " Even this got changed";
+            document.getElementById('paragraph').className = 'err';            
 
+        }
+
+        function changeImage(){
+            document.getElementById('my_image').src = 'https://media.wired.co.uk/photos/606d9a3ba876dd2203a639aa/1:1/w_2000,h_2000,c_limit/wired-uk-google-watching.jpg';
+        }
+
+        function showdiv(){
+            var elem = document.createElement('div');
+            elem.innerHTML = "<p>Harsh is here</p>";
+            document.body.appendChild(elem);
+        }
+    </script>
+
+    <style>
+        .err {
+            background-color: yellow;
+            color: red;
+            font-size: 28px;
+        }
+    </style>
     <body>
+        
         <h2 class="class_para">This is my heading</h2>
         <p class="class_para">This is a text 1 </p>
         <p class="class_para">This is a text 2 </p>
         <p class="class_para">This is a text 3</p>
         <p id="paragraph">This is a text 4</p>
-
+        <button onclick="showdiv()">Show div</button>
+        <button onclick="changeImage()">Change Image</button>
+        
+        <img id="my_image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Google_Images_2015_logo.svg/450px-Google_Images_2015_logo.svg.png" alt="No able to find the image">
+        
     </body>
-    <script>
-        // to get it based on id
-        const para = document.getElementById('paragraph');
-        console.log(para);
-
-        // to get it based on tag name which is p in this case
-        var all_para = document.getElementsByTagName('p');
-        console.log(all_para[1]);
-
-        // to get it based on class name 
-        var class_para = document.getElementsByClassName('class_para');
-        console.log(class_para);
-
-        // document.getElementById('paragraph').innerHTML = " I am trying to change the paragraph";
-
-        //other way of writing the above ^ ^
-        para.innerHTML = " Even this got changed";
-
-        document.getElementsByTagName('p')[0].innerHTML = 'Now this will change the text for this particular one only';
-        document.getElementsByTagName('p')[1].innerHTML = 'Now change the text for second one';
-
-        para.style.color = 'red';
-
-        // TODO try two different css styles on any of the elements
-
-
-    </script>
 </html>

@@ -11,6 +11,18 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
+    <style>
+    html {
+        scroll-behavior: smooth;
+        /*Adds smooth scrolling instead of snapping to element*/
+      }
+      
+      #portfolio {
+        height: 500px;
+        /* width: 100%; */
+      
+      }
+    </style>
     <body>
 
     <nav class="navbar navbar-inverse">
@@ -18,7 +30,7 @@
             <ul class="nav navbar-nav">
             <li><a href="index_day_5_2.html">Home</a></li>
             <li><a href="#">About Me</a></li>
-            <li><a href="#">Portfolio</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="contact.html">Contact Me</a></li>
             </ul>
         </div>
@@ -52,6 +64,8 @@
 
         </form>
       </div>
+
+      <div id="portfolio"></div>
       
       </body>
       </html>

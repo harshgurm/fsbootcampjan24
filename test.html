@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Examples</title>
+    </head>
+    <script>
+          function myFunction() {
+                let x = document.forms["myForm"]["fname"].value;
+                if (x == "") {
+                    alert("Name must be filled out");
+                    document.getElementById('name_error').style.display = 'inline';
+                    return false;
+                }
+            }
+    </script>
+    <body>
+
+
+    <form id="myForm" >
+        First name: <input type="text" name="fname" id="fname"><br>
+        <span id="name_error" style="color:red;display:none;">Please fill the name field</span><br>
+        Last name: <input type="text" name="lname"><br><br>
+        <input type="button" onclick="myFunction()" value="Submit form">
+      </form>
+      
+      
+      </body>
+      </html>
+</html>
