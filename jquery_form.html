@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+
+        $('#form_submit').click(function(event){
+
+            $('#name_error').hide();
+            $('#pass_error').hide();
+
+            // javascript code to do the same
+            // var fname = document.getElementById('fname_id').value;
+            
+            var fname = $('#fname_id').val();
+            var pass = $('#pass_id').val();
+            
+            if(fname == '' && pass == ''){
+                $('#name_error').show();
+                $('#pass_error').show();
+                event.preventDefault();
+
+            } else if(fname == ''){
+                $('#name_error').show();
+                event.preventDefault();
+
+            } else if(pass == ''){
+                $('#pass_error').show();
+                event.preventDefault();
+            }
+
+        })
+
+    });
+
+    var person = {
+        first_name: "Harsh",
+        last_name: "Test",
+        age: 28
+    }
+
+    console.log(person.first_name);
+
+  </script>
+</head>
+<body>
+    
+    <form name="user_form" method="POST">
+        First Name: <input type="text" id="fname_id" name="fname"><br>
+        <span id="name_error" style="color:red;display: none;">Name is required</span><br>
+        Password: <input type="password" id="pass_id" name="pass"><br>
+        <span id="pass_error" style="color:red;display: none;">Password is required</span><br>
+        <input type="submit" id="form_submit">
+    </form>
+
+</body>
+</html>

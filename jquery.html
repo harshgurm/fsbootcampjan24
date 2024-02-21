@@ -34,26 +34,59 @@ $(document).ready(function(){
         $('p').hide();
     })
 
+    $('#show').click(function(){
+        $('p').show();
+    });
+
+    $('#toggle').click(function(){
+        $('p').toggle();
+    });
+
+    $('input').focus(function(){
+        $(this).css('background-color', 'yellow');
+    })
+
+    $('input').blur(function(){
+        $(this).css('background-color', 'white');
+    })
+
+    $('#animate').click(function(){
+        $('div').animate({left: '300px'});
+    });
+
+
 });
 </script>
 <style>
-    .color_class {
+    /* .color_class {
         color:red; 
         background-color:yellow;
+    } */
+
+    div {
+        width: 100px;
+        height:100px;
+        background-color: grey;
     }
 </style>
-
-
 </head>
 <body>
 
-<p>This is a paragraph.</p>
+    Name <input type="text" name="first_name"><br>
 
-<h2 class="color_class">This is where I want to remove the class</h2>
+    <button id="animate">Animate Example</button>
 
-<div id="text">This is My Div</div>
+    <button id="toggle">Toggle Example</button>
 
-<button class="button_class">Click Me</button>
+    <button id="show">Show Paragraph</button>
+
+    <button class="button_class">Hide Paragraph</button>
+
+    <p>This is a paragraph.</p>
+
+    <h2 class="color_class">This is where I want to remove the class</h2>
+
+    <div id="text" >This is My Div</div>
 
 </body>
 </html>
