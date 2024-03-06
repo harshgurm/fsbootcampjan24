@@ -51,15 +51,61 @@ app.post('/employees/', async (request, response) => {
         const result = await connection.query(`
         INSERT INTO robogarden.employees (name, department_id)
         VALUES( ?, ?)`, [name, department_id]);
-        response.status(200).json();
+        return response.status(200).send(`Rows instered ${result.affectedRows}`);        
     } catch (error) {
         console.log(error);
-        response.send(500).send(error);
+        return response.status(500).send(error);
     }
     
 });
 
-//To Do Insert departments
+//Update Employees
+app.put('/employees/:id', async (request, response) => {
+    const connection = await pool.getConnection();
+    const id = request.params.id;
+    const name = request.body.name;
+    
+    if(!name) return response.status(500).send('Please provide a name to update');
+
+    try{
+        const result = await connection.query(`
+        UPDATE robogarden.employees
+        SET name = ?
+        WHERE employee_id = ?`, [name, id]);
+        return response.status(200).send(`Number of rows updated = ${result.affectedRows}`);
+    } catch (error) {
+        console.log(error);
+        return response.status(500).send(error.toString());
+    }
+
+});
+
+//DELETE Request
+app.delete('/employees/:id', async (request, response) => {
+    const connection = await pool.getConnection();
+    const id = request.params.id;    
+    
+    try{
+        const result = await connection.query(`
+        DELETE FROM robogarden.employees
+        WHERE employee_id = ?`, id);
+        return response.status(200).send(`Number of records deleted = ${result.affectedRows}`);
+    } catch (error) {
+        console.log(error);
+        return response.status(500).send(error.toString());
+    }
+
+});
+
+
+//To Do 
+// We will check this on Monday
+// API request to insert departments
+// API request to update departments
+// API request to return all departments
+// API request to return a department based on id
+// API request to delete a department based on id
+
 
 app.listen(3000, () => {
     console.log('Application is running');
