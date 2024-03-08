@@ -11,4 +11,10 @@ router.post('/add_department', (request, response) => {
     });
 });
 
+//To Do using 
+//create get_departments
+//create get a specific department
+//update a department
+//delete a department
+
 module.exports = router;

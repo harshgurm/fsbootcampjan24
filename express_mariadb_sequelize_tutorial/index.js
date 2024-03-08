@@ -21,7 +21,7 @@ Employee.belongsTo(Department);
 
 // sequelize.sync({force: true})
 sequelize.sync().then((response) => {
-    console.log(response);
+    // console.log(response);
 }).catch((error) => {
     console.log(error);
 });
