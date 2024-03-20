@@ -1,0 +1,66 @@
+<h2>This is My Website name {{ title }} </h2>
+
+<h2>{{ ' This is My Website name ' + title }} </h2>
+
+<h3>This is the information regarding a person</h3>
+<div *ngIf="person">
+  <p>Custom Person ID: {{person.id}}</p>
+  <p>Custom Person Name: {{person.name}}</p>
+</div>
+
+
+
+<h3 [style.backgroundColor]="color_yellow">This is my H3 Tag</h3>
+<p [style.background-color]="color_yellow">This is my paragraph tag</p>
+
+<p [style]="styleClass">This is the example of inline style in angular with multiple properities</p>
+
+<!-- <ul>
+  <li>Id 1 Name Harsh</li>
+  <li>Id 2 Test</li>
+</ul> -->
+
+<ul>
+  <li *ngFor="let person of persons">{{ ' ID ' + person.id + ' Name ' + person.name }}</li>
+</ul>
+<!-- 
+<button [ngClass]="[class_1, class_2]">Ng Class Example</button>
+
+<button [ngClass]="{class_1: true, class_2: false}">Ng Class Example</button> -->
+
+<!-- <p [ngClass]=" true ? 'class_1' : ''">This is my para example with ngClass</p> -->
+<!-- <p [ngClass]="'class_1'">This is my para example with ngClass</p>
+<p [ngClass]="['class_1', 'class_2']">This is my para example with ngClass Class 2</p> -->
+
+<!-- Writing/Adding multiple class
+class="btn btn-primary"
+[ngClass]="['btn', 'btn-primary']" -->
+<p [ngClass]="['class_1', 'class_2']">This is my ngExample</p>
+<p [ngClass]=" true ? 'class_1' : ''">Conditionally added CSS</p>
+
+<input [(ngModel)]="title">
+
+<input [(ngModel)]="title">
+
+Value: {{ title }}
+
+<app-item [item]="title"  [per]="persons"></app-item>
+
+<!-- only works in case of string -->
+<!-- Example of interpolation {{}} not working because the value is boolean-->
+<button disabled="{{isDisabled}}"> Interpolation Disable Button</button><br>
+
+<!-- Example of Property Binding []-->
+<button [disabled]="isDisabled">Property Binding Disable Button</button><br>
+
+
+<button (click)="clearImage()">Clear Image</button>
+
+<button (click)="showImage()">Show Image</button>
+
+<!-- Example of interpolation {{}}-->
+<!-- <img src="{{imageUrl}}" alt="Image Not Found"> -->
+
+<!-- Example of Property Binding [] -->
+<img [src]="imageUrl" alt="Image Not Found">
+
