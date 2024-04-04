@@ -1,9 +1,23 @@
 const pool = require('./connection');
 const express = require('express');
+const cors = require('cors');
 
 const app = express();
 
+app.use(function (req, res, next) {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader('Access-Control-Allow-Methods', '*');
+    res.setHeader("Access-Control-Allow-Headers", "*");
+    next();
+  });
+
+app.use(cors());
+
+// app.use(cors({origin: 'http://localhost:4200/'}));
+
 app.use(express.json());
+
+
 
 //get all the employees
 app.get('/employees/', async (request, response) => {
