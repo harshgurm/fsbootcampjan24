@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      My Ionic App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">My Ionic App</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+   <ion-button [routerLink]="['/buttons']" fill="outline">Button Example</ion-button>
+   <ion-button [routerLink]="['/input']" fill="outline" color="warning">Input Example</ion-button>
+   <ion-button [routerLink]="['/list-item']" fill="outline" color="warning">List Item Example</ion-button>
+   <ion-button [routerLink]="['/icon']" fill="outline" color="success">Icon Example</ion-button>
+
+   <!-- <ion-fab horizontal="center" vertical="center">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+   </ion-fab> -->
+
+   <ion-fab horizontal="center" vertical="center">
+    
+    <ion-fab-button size="small">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    
+    <ion-fab-list side="top">
+      <ion-fab-button>
+        <ion-icon name="chevron-up"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+
+    <ion-fab-list side="end">
+      <ion-fab-button>
+        <ion-icon name="star-sharp"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+
+    <ion-fab-list side="bottom">
+      <ion-fab-button>
+        <ion-icon name="chevron-down"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+
+    <ion-fab-list side="start">
+        <ion-fab-button>
+          <ion-icon name="chevron-back"></ion-icon>
+        </ion-fab-button>
+    </ion-fab-list>
+
+   </ion-fab>
+
+  </div>
+</ion-content>

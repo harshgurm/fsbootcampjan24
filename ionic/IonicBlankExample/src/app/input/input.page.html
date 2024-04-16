@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Input</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="primary">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Input</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list [inset]="true">
+
+    <ion-item>
+      <ion-input label="Name" placeholder="Enter your Name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Number" type="number" placeholder="Enter a Number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Password" type="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Email" type="email" placeholder="test@gmail.com"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Telephone" type="tel" placeholder="999-999-9999"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Stacked Example" labelPlacement="stacked" placeholder="Age"></ion-input> 
+    </ion-item>
+
+  </ion-list>
+
+  <!-- add a click function to save stuff -->
+  <ion-button color="success" fill="outline">Submit</ion-button>
+  <ion-button color="warning" fill="outline" [routerLink]="['/home']">Back</ion-button>
+  <ion-button color="success" fill="outline" (click)="moveBack()">Moving Backward</ion-button>
+
+</ion-content>

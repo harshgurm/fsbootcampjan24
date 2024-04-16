@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>buttons</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">buttons</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-button >Button</ion-button>
+  <ion-button [disabled]="true" >Disabled</ion-button>
+  <ion-button shape="round" >Round Button</ion-button>
+  <ion-button fill="outline">Outline Button</ion-button>
+  <ion-button fill="clear">Clear Button</ion-button>
+  <ion-button color="primary">Primary Color</ion-button>
+  <ion-button color="warning" fill="outline">Warning Color</ion-button>
+  <ion-button color="success">Success Color</ion-button>
+  <ion-button fill="outline" [routerLink]="['/home']">Back</ion-button>
+  <ion-button fill="outline" (click)="movingBack()">Moving Backward</ion-button>
+</ion-content>
