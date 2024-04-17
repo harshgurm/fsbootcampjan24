@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>alerts</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">alerts</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-button id="show-alert">Basic Alert</ion-button>
+  <ion-alert
+   trigger="show-alert"
+   header="This is the header of Alert"
+   subHeader="I am the subHeader"
+   message="Danger ahead!!!!"
+   [buttons] = "alertButton"
+  ></ion-alert>
+
+  <ion-button (click)="openAlert(true)" color="warning">Alert Button</ion-button>
+  <ion-alert
+  [isOpen] = "isAlertOpen"
+  header="This is the header of Alert"
+  subHeader="I am the subHeader"
+  message="Danger ahead!!!!"
+  [buttons] = "alertButton"
+  (didDismiss)="openAlert(false)" 
+ ></ion-alert>
+
+ <ion-button (click)="buttonClicked()">AlertController Example</ion-button>
+  
+
+
+ <ion-button id="button-alert">Buttons Alert</ion-button>
+ <ion-alert
+  trigger="button-alert"
+  header="This is the header of Alert"
+  subHeader="I am the subHeader"
+  message="Danger ahead!!!!"
+  [buttons] = "buttonExample"
+  (didDismiss)="showRole($event)"
+ ></ion-alert>
+
+
+
+
+  <ion-button [routerLink]="['/home']" routerDirection="back">Back</ion-button>
+</ion-content>

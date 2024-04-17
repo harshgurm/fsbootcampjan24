@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'icon',
     loadChildren: () => import('./icon/icon.module').then( m => m.IconPageModule)
   },
+  {
+    path: 'alerts',
+    loadChildren: () => import('./alerts/alerts.module').then( m => m.AlertsPageModule)
+  },
 ];
 
 @NgModule({

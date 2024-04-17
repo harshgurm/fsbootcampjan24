@@ -18,6 +18,8 @@
    <ion-button [routerLink]="['/input']" fill="outline" color="warning">Input Example</ion-button>
    <ion-button [routerLink]="['/list-item']" fill="outline" color="warning">List Item Example</ion-button>
    <ion-button [routerLink]="['/icon']" fill="outline" color="success">Icon Example</ion-button>
+   <ion-button [routerLink]="['/alerts']">Alert Example</ion-button>
+
 
    <!-- <ion-fab horizontal="center" vertical="center">
     <ion-fab-button>
@@ -25,28 +27,37 @@
     </ion-fab-button>
    </ion-fab> -->
 
-   <ion-fab horizontal="center" vertical="center">
+   <ion-fab horizontal="end" vertical="bottom">
     
     <ion-fab-button size="small">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
     
     <ion-fab-list side="top">
+
       <ion-fab-button>
         <ion-icon name="chevron-up"></ion-icon>
       </ion-fab-button>
+
+      <ion-label>Up</ion-label>
     </ion-fab-list>
 
     <ion-fab-list side="end">
+      
+
       <ion-fab-button>
         <ion-icon name="star-sharp"></ion-icon>
       </ion-fab-button>
+      <ion-label>Fav</ion-label>
     </ion-fab-list>
 
     <ion-fab-list side="bottom">
+      
       <ion-fab-button>
         <ion-icon name="chevron-down"></ion-icon>
       </ion-fab-button>
+
+      <ion-label>Down</ion-label>      
     </ion-fab-list>
 
     <ion-fab-list side="start">
