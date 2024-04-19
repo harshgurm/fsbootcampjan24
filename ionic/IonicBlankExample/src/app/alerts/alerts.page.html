@@ -15,9 +15,8 @@
   <ion-button id="show-alert">Basic Alert</ion-button>
   <ion-alert
    trigger="show-alert"
-   header="This is the header of Alert"
-   subHeader="I am the subHeader"
-   message="Danger ahead!!!!"
+   header="Storage"
+   message="You have used 90% of your storage"
    [buttons] = "alertButton"
   ></ion-alert>
 
@@ -38,14 +37,19 @@
  <ion-button id="button-alert">Buttons Alert</ion-button>
  <ion-alert
   trigger="button-alert"
-  header="This is the header of Alert"
-  subHeader="I am the subHeader"
-  message="Danger ahead!!!!"
+  header="New IOS Update is available"
+  message="Proceed if you want to install the new IOS Update"
   [buttons] = "buttonExample"
   (didDismiss)="showRole($event)"
  ></ion-alert>
 
-
+ <ion-button id="input-alert">Input Alert</ion-button>
+ <ion-alert
+  trigger="input-alert"
+  header="Your Information"
+  [buttons] = "inputBtnEx"
+  [inputs] = "alertInputs"
+ ></ion-alert>
 
 
   <ion-button [routerLink]="['/home']" routerDirection="back">Back</ion-button>

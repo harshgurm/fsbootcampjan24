@@ -31,6 +31,22 @@ const routes: Routes = [
     path: 'alerts',
     loadChildren: () => import('./alerts/alerts.module').then( m => m.AlertsPageModule)
   },
+  {
+    path: 'toast',
+    loadChildren: () => import('./toast/toast.module').then( m => m.ToastPageModule)
+  },
+  {
+    path: 'cards',
+    loadChildren: () => import('./cards/cards.module').then( m => m.CardsPageModule)
+  },
+  {
+    path: 'reorderlist',
+    loadChildren: () => import('./reorderlist/reorderlist.module').then( m => m.ReorderlistPageModule)
+  },
+  {
+    path: 'grids',
+    loadChildren: () => import('./grids/grids.module').then( m => m.GridsPageModule)
+  },
 ];
 
 @NgModule({

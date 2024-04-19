@@ -9,6 +9,7 @@ import { AlertController } from '@ionic/angular';
 export class AlertsPage implements OnInit {
 
   alertButton = ['Action'];
+  inputBtnEx = ['Submit'];
   isAlertOpen = false;
 
   constructor(private alertController:AlertController) { }
@@ -41,10 +42,10 @@ export class AlertsPage implements OnInit {
       }
     },
     {
-      text: 'OK',
+      text: 'Install',
       role: 'confirm',
       handler:() => {
-        console.log('OK is clicked')
+        console.log('Install is clicked')
       }
     },
   ];
@@ -52,5 +53,21 @@ export class AlertsPage implements OnInit {
   showRole(ev:any) {
     console.log('The role is', ev.detail.role);
   }
+
+  public alertInputs = [
+    {
+      placeholder: 'First Name'
+    },
+    {
+      placeholder: 'Last Name',      
+    },
+    {
+      type: 'number',
+      placeholder: 'Age',
+      max: 100,
+      maxlength: 100,
+      min: 1
+    }
+  ]
 
 }
