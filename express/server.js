@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 app.use(express.json());
 
 app.use((request, response, next) => {
@@ -18,9 +20,9 @@ const user = [
     { name: "Test", email: "test@gmail.com", password: "password" },    
 ]
 
-// app.get('/', (request, response) => {
-//     response.send('The is another message');
-// });
+app.get('/', (request, response) => {
+    response.redirect('/customers');
+});
 
 app.get('/customers', (request, response) => {
 
@@ -103,6 +105,6 @@ app.all('*', (request, response) => {
     response.send("404 Page not found");
 });
 
-app.listen(3000, () => {
-    console.log('Application is running');
+app.listen(port, () => {
+    console.log(`Application is running on ${port}`);
 })
