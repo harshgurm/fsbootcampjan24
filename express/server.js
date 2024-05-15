@@ -96,7 +96,6 @@ app.post('/register/', (request, response) => {
     // customers.push(customer);
 
     response.send(user);
-    // var user_register =
 
 });
 
