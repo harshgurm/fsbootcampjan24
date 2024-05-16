@@ -2,8 +2,14 @@ const pool = require('./connection');
 const express = require('express');
 const app = express();
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const verifyUser = require('./auth');
 
 app.use(express.json());
+
+app.get('/', verifyUser, (request, response) => {
+    response.status(200).json('Welcome!!!');
+})
 
 app.post('/register/', async (request, response) => {
     const { username, password, confirm_password } = request.body;
@@ -18,12 +24,13 @@ app.post('/register/', async (request, response) => {
 
     const connection = await pool.getConnection();
     const hashedPassword = await bcrypt.hash(password, 10);
+
+    //missing the check to make sure the username is unique
     
     try {
         const result = await connection.query(`INSERT INTO robo_project_auth.users (username, password)
                                         VALUES (?, ?)`, [username, hashedPassword]);
-
-        console.log('HG here', result);
+        
         return response.status(200).json(`Rows inserted ${result.affectedRows}`);
         
     } catch(error){
@@ -41,7 +48,7 @@ app.post('/login/', async (request, response) => {
     const connection = await pool.getConnection();
 
     try {
-        const user = await connection.query(`SELECT username, password 
+        const user = await connection.query(`SELECT user_id, username, password 
                                          FROM robo_project_auth.users
                                          WHERE username = ?`, username);
 
@@ -49,13 +56,17 @@ app.post('/login/', async (request, response) => {
             return response.status(401).json('User not found');
         }
         
-        const matchPassword = bcrypt.compare(password, user[0].password);
-        
+        const matchPassword = await bcrypt.compare(password, user[0].password);
+
         if(!matchPassword){
             return response.status(401).json('Invalid creds');
         }
 
-        return response.status(200).json(`This is valid user`);
+        const token = jwt.sign({ user_id: user[0].user_id }, 'thisismyencryptionkey', {
+            expiresIn: '1h',
+        });
+
+        return response.status(200).json(token);
 
     } catch (errors) {
 
