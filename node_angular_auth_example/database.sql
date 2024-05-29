@@ -11,7 +11,10 @@ CREATE TABLE robo_project_auth.users
   PRIMARY KEY (`user_id`)
 );
 
--- SELECT * FROM robo_project_auth.users;
+SELECT * FROM robo_project_auth.users;
 
 ALTER TABLE robo_project_auth.users
 MODIFY password VARCHAR(100) NOT NULL;
+
+ALTER TABLE robo_project_auth.users
+MODIFY username VARCHAR(50) UNIQUE NOT NULL;

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AuthdataService } from '../authdata.service';
 
 @Component({
   selector: 'app-signup',
@@ -13,8 +14,16 @@ export class SignupComponent {
     confirm_password: ''
   }
 
-  signUp(form:{}){
+  authService:AuthdataService = inject(AuthdataService);
+
+  signUp(form:any){
     console.log(form);
+    if(form.valid){
+      this.authService.signUp(form.form.value).subscribe((result:any) => {
+        console.log(result);
+      });
+    }
+    
   }
 
 }

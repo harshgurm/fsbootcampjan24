@@ -11,6 +11,11 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: '',
+    redirectTo: 'signin',
+    pathMatch: 'full'
   }
 ];
 
@@ -19,3 +24,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+ 

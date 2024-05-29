@@ -4,8 +4,11 @@ const app = express();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const verifyUser = require('./auth');
+const cors = require('cors');
 
 app.use(express.json());
+
+app.use(cors());
 
 app.get('/', verifyUser, (request, response) => {
     response.status(200).json('Welcome!!!');
