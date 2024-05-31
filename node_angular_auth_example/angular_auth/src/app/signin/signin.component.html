@@ -1,16 +1,17 @@
-<form #signInForm="ngForm" (ngSubmit)="signIn(signInForm)">
-    
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input class="form-input" type="email" name="username" [(ngModel)]="signInDetails.username">
-    </div>
+<main class="form-signin">
+    <form #signInForm="ngForm" (ngSubmit)="signIn(signInForm)">
+        <h1 class="h3 mb-3 fw-normal">Sign in</h1>
+        
+        <div class="form-floating">
+            <label for="email">Email</label>
+            <input class="form-control" type="email" name="username" [(ngModel)]="signInDetails.username">
+        </div>
 
-    <div class="form-group">
-        <label for="email">Password</label>
-        <input class="form-input" type="password" name="password" [(ngModel)]="signInDetails.password">
-    </div>
+        <div class="form-floating">
+            <label for="email">Password</label>
+            <input class="form-control" type="password" name="password" [(ngModel)]="signInDetails.password">
+        </div>
 
-    <button type="submit">Submit</button>
-
-
-</form>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+    </form>
+</main>
