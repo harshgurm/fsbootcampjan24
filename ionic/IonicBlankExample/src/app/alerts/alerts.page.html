@@ -20,7 +20,7 @@
    [buttons] = "alertButton"
   ></ion-alert>
 
-  <ion-button (click)="openAlert(true)" color="warning">Alert Button</ion-button>
+  <ion-button (click)="openAlert(true)" color="warning">Alert Button {{isAlertOpen}}</ion-button>
   <ion-alert
   [isOpen] = "isAlertOpen"
   header="This is the header of Alert"

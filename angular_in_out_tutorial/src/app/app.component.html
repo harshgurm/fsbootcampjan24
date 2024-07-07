@@ -1,0 +1,11 @@
+<h1>Parent Component</h1>
+
+<h2>website title {{title}}</h2>
+
+<ul>
+  <li *ngFor="let student of students">{{student}}</li>
+</ul>
+
+<input type="text" [(ngModel)]="title">
+
+<app-students [websiteTitle]="title" [childPerson]="person" (newItemEvent)="addStudents($event)"></app-students>

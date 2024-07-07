@@ -17,8 +17,9 @@ export class AlertsPage implements OnInit {
   ngOnInit() {
   }
 
-  openAlert(val:boolean){
-    this.isAlertOpen = val;
+  openAlert(jair:boolean){
+    console.log(jair,' Jair for you');
+    this.isAlertOpen = jair;
   }
 
   async buttonClicked(){
