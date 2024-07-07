@@ -15,9 +15,18 @@ export class AppComponent {
   docCount: number = 0;
 
   countService: CountService = inject(CountService);
+  
 
   constructor(){
     this.docCount = this.countService.numOfDoctors;
   }
+
+  // constructor(private countService: CountService){
+  //   this.countService = countService;
+  // }
+
+  // getNumDocs(){
+  //   this.docCount = this.countService.numOfDoctors;
+  // }
 
 }

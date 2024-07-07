@@ -9,7 +9,7 @@
             </div>            
         </div>
         <!-- {{ signUpForm.value | json }} -->
-        {{ signUpForm.get('email')?.errors | json }}
+        {{ signUpForm.value | json }}
         
         <div class="form-group">
             <label for="password">Password</label>
@@ -21,6 +21,8 @@
                 Password is not secure.
             </div>          
         </div>
+        Invalid Pass {{ signUpForm?.get('password')?.errors?.invalidPassword }}
+        <br> Not secure {{  signUpForm.get('password')?.invalid }}
 
         <div class="form-group">
             <label for="first_name">First Name</label>

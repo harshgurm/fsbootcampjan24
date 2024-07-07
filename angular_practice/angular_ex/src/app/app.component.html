@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+
+Doctor count{{docCount}}
+
+Example of simple text
+<br>
+{{ title }}
+
+<br>
+
+Example of Object
+
+
+
+<h2 [style.backgroundColor]="color_yellow">{{ person }}</h2>
+
+<br>
+<p [style.background-color]="color_red">Example of Simple Object</p>
+<h3 [style]="styleClass">This is heading 3 example</h3>
+
+<div *ngIf="test">
+  HERE {{ 'ID = ' + person.id + ' Name =  ' + person.name  }}
+</div>
+
+
+<button type="button" [attr.aria-label]="actionName">{{actionName}} with Aria</button>
+
+<button [disabled]='isDisabled'>Property Binding Try Me</button>
+<button disabled='{{isDisabled}}'>Interpolation Try Me</button>
+
+
+<button type="button" (click)="clearImage()">Clear Image</button>
+<button type="button" (click)="addImage()">Add Image</button>
+
+<ul>
+  <li *ngFor="let test of persons">{{test.id + test.name}}</li>
+</ul>
+
+<app-item [item]="currentItem" [per]="persons"></app-item>
+
+<button [ngClass]="{ p:false }">  HG here Button</button>
+
+<button [ngClass]=" true ? 'p' :'' ">  HG here Button</button>
+
+<input [(ngModel)]="name" required />
+
+<input [ngModel]="name" required />
+
+<p>Value: {{ name }}</p>
+<!-- <p>Valid: {{ ctrl.valid }}</p> -->
+
+<button (click)="setValue()">Set value</button>
+
+<!-- <img src="{{imagUrl}}" alt="Image Not Found"> -->
+<!-- <img [src]="imagUrl" alt="Image Not Found"> -->

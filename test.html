@@ -1,25 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-    .color{
-        padding: 50 px;
-        display:none;
-        background-color: black;
-    }
-</style>
 
-<script>
-$(document).ready(function(){
-    $('.color').slideDown('slow');
-});
-</script>
+@media only print {
+	body {
+		background-color: yellow;
+	}
+	p {
+		color:green;
+	}
+	.header {
+		color: yellow;
+	}
+}
+</style>
 </head>
 <body>
+    
+  <form id="user_form" method="POST">
+        First Name: <input type="text" id="fname_id" name="fname_name"><br>
+        <span id="name_error" style="color:red;display: none;">Name is required</span><br>
+        Password: <input type="password" id="pass_id" name="pass_name"><br>
+        <span id="pass_error" style="color:red;display: none;">Password is required</span><br>
+        <input type="submit">
+    </form>
 
-<p class="color">If you click on me, I will disappear.</p>
+    <!-- To DO -->
+    <!-- Practice adding forms either on model.html 
+    or 
+    create a new page for sign up without any bootstrap and practice form submission
+    keep track of your error and ask me tomorrow -->
 
 </body>
 </html>

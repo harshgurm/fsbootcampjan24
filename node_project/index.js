@@ -17,8 +17,24 @@ const file = path.parse(__filename);
 // console.log(os.hostname());
 
 // console.log(fs.readdirSync('../'));
+
+
+
 const file_content = fs.readFile(__filename, "utf8" , (err, data) => {
     if(err) console.log(err);
     else console.log(data);
 });
-console.log(file_content);
+
+
+// console.log(file_content);
+console.time("add");
+
+try {
+    const data = fs.readFileSync(__filename, "utf8");
+    console.log(data);
+} catch(error) {
+    console.log(error);
+}
+
+console.timeEnd("add");
+// console.log(file_content_sync);

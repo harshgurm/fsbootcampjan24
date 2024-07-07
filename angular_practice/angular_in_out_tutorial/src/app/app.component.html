@@ -1,0 +1,8 @@
+<app-students [websiteTitle]="title" [childPerson]="person" (newItemEvent)="addStudents($event)"></app-students>
+
+<ul>
+  <li *ngFor="let student of students">{{student}}</li>
+</ul>
+
+<input type="text" [(ngModel)]="title">
+<div> Title in Parent {{title}}</div>

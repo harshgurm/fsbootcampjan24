@@ -1,12 +1,12 @@
 <h2>This is My Website name {{ title }} </h2>
 
 <h2>{{ ' This is My Website name ' + title }} </h2>
-
+<!-- 
 <h3>This is the information regarding a person</h3>
 <div *ngIf="person">
   <p>Custom Person ID: {{person.id}}</p>
   <p>Custom Person Name: {{person.name}}</p>
-</div>
+</div> -->
 
 
 
@@ -20,38 +20,45 @@
   <li>Id 2 Test</li>
 </ul> -->
 
-<ul>
+<!-- <ul>
   <li *ngFor="let person of persons">{{ ' ID ' + person.id + ' Name ' + person.name }}</li>
-</ul>
-<!-- 
-<button [ngClass]="[class_1, class_2]">Ng Class Example</button>
+</ul> -->
 
-<button [ngClass]="{class_1: true, class_2: false}">Ng Class Example</button> -->
+<!-- <button [ngClass]="[class_1, class_2]">Ng Class Example</button> -->
 
-<!-- <p [ngClass]=" true ? 'class_1' : ''">This is my para example with ngClass</p> -->
+<button [ngClass]="{class_1: true, class_2: false}">Ng Class Example</button>
+
+<p [ngClass]=" isDisabled ? 'class_1' : ''">This is my para example with ngClass</p>
 <!-- <p [ngClass]="'class_1'">This is my para example with ngClass</p>
 <p [ngClass]="['class_1', 'class_2']">This is my para example with ngClass Class 2</p> -->
 
 <!-- Writing/Adding multiple class
 class="btn btn-primary"
 [ngClass]="['btn', 'btn-primary']" -->
-<p [ngClass]="['class_1', 'class_2']">This is my ngExample</p>
-<p [ngClass]=" true ? 'class_1' : ''">Conditionally added CSS</p>
+<!-- <p [ngClass]="['class_1', 'class_2']">This is my ngExample</p>
+<p [ngClass]=" true ? 'class_1' : ''">Conditionally added CSS</p> -->
 
-<input [(ngModel)]="title">
+This will be changed <input [(ngModel)]="title"><br>
 
-<input [(ngModel)]="title">
-
+<!-- property binding [] -->
+This won't be changed with input <input [ngModel]="title"><br>
+<!-- interpolation -->
 Value: {{ title }}
+<!-- event binding () -->
+<button (click)="callMe($event)">Call Me</button>
 
-<app-item [item]="title"  [per]="persons"></app-item>
+<input value="Jair" #test><br>
+
+Hello {{ test.value }}
+
+<!-- <app-item [item]="title"  [per]="persons"></app-item> -->
 
 <!-- only works in case of string -->
 <!-- Example of interpolation {{}} not working because the value is boolean-->
-<button disabled="{{isDisabled}}"> Interpolation Disable Button</button><br>
+<!-- <button disabled="{{isDisabled}}"> Interpolation Disable Button</button><br> -->
 
 <!-- Example of Property Binding []-->
-<button [disabled]="isDisabled">Property Binding Disable Button</button><br>
+<!-- <button [disabled]="isDisabled">Property Binding Disable Button</button><br> -->
 
 
 <button (click)="clearImage()">Clear Image</button>

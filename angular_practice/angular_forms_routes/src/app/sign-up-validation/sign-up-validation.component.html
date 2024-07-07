@@ -1,0 +1,73 @@
+<div class="container">
+
+    <form #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm)">
+        <div class="form-group"
+            [ngClass]="{
+                'has-danger': emailCheck.invalid && emailCheck.touched,
+                'has-success': emailCheck.valid && emailCheck.touched,
+            }">
+            <label for="email">Email</label>
+            <input type="email" name="email" class="form-control" [(ngModel)]="signUpDetails.email" pattern=".*@[a-z0-9.-]*" required #emailCheck="ngModel">            
+            <div *ngIf="emailCheck.touched && emailCheck.invalid" class="text-danger">
+                Email is required.
+                {{emailCheck.invalid | json }}
+                {{emailCheck.errors | json }}
+                {{emailCheck.errors?.pattern?.actualValue | json}}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control" [(ngModel)]="signUpDetails.password" required #passCheck="ngModel"
+            minlength="6" >
+            <div *ngIf="passCheck.touched && passCheck.invalid" class="text-danger">
+                Password is required.
+            </div>
+            {{passCheck.invalid | json }}
+            {{passCheck.errors | json}}
+            <!-- <div *ngIf="passCheck.touched && passCheck.errors" class="text-danger">
+                Password is must be minimum 8 characters long.
+            </div> -->
+        </div>
+
+        <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="first_name" name="first_name" class="form-control" [(ngModel)]="signUpDetails.first_name" #firstNameCheck="ngModel">
+            <div *ngIf="firstNameCheck.touched && firstNameCheck.invalid" class="text-danger">
+                First Name is required.
+            </div>
+        </div>
+
+        
+        <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="last_name" name="last_name" class="form-control" [(ngModel)]="signUpDetails.last_name" #lastNameCheck="ngModel">
+            <div *ngIf="lastNameCheck.touched && lastNameCheck.invalid" class="text-danger">
+                Last Name is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Gender</label><br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="male" value="male"  [(ngModel)]="signUpDetails.gender" #genderCheck="ngModel">
+                <label class="form-check-label" for="male">
+                  Male
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="female" value="female" [(ngModel)]="signUpDetails.gender" #genderCheck="ngModel">
+                <label class="form-check-label" for="female">
+                  Female
+                </label>
+            </div>
+            <!-- <div *ngIf="genderCheck.touched && genderCheck.errors" class="text-danger">
+                Gender is required.
+            </div> -->
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+
+</div>

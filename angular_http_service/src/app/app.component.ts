@@ -18,6 +18,7 @@ export class AppComponent {
 
   constructor(){
    this.employeeService.getEmployees().subscribe((result:any) => {
+    console.log(result);
     this.employees = result.employees;
    }) 
 

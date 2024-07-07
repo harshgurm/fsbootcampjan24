@@ -1,0 +1,7 @@
+{
+  "name": "blanktotabs",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

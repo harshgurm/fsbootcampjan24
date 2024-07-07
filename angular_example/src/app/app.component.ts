@@ -39,13 +39,15 @@ export class AppComponent {
 
   imageUrl:string = "https://buffer.com/library/content/images/2023/10/free-images.jpg";
 
-  isDisabled: boolean = false;
+  isDisabled: boolean = true;
 
   color_yellow:string="yellow";
 
+
   styleClass:string="color:green; font-size: 30px;"
 
-  // class_1:string = "color:green; font-size: 30px";
+  class_1:string = "color:green; font-size: 30px";
+  class_2:string = "background-color:yellow";
 
   clearImage() {
     this.imageUrl = '';
@@ -53,6 +55,10 @@ export class AppComponent {
 
   showImage() {
     this.imageUrl = 'https://buffer.com/library/content/images/2023/10/free-images.jpg';
+  }
+
+  callMe(event:any){
+    console.log('I am being called', event);
   }
 
 }

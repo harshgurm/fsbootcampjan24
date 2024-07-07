@@ -1,0 +1,7 @@
+{
+  "name": "ionicblanktabs",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
