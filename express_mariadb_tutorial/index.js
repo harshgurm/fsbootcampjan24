@@ -20,6 +20,7 @@ app.use(express.json());
 
 
 //get all the employees
+
 app.get('/employees/', async (request, response) => {
     //get the connection
     const connection = await pool.getConnection();
@@ -29,8 +30,8 @@ app.get('/employees/', async (request, response) => {
         response.status(200).json({
             employees: result,
         });
-    } catch (error) {
-        response.send(500).send(error);
+    } catch (error) {        
+        response.send(500).json(error);
     }
 
 });
@@ -55,9 +56,10 @@ app.get('/employees/:id', async (request, response) => {
 
 app.post('/employees/', async (request, response) => {
     const connection = await pool.getConnection();
-    // const name = request.body.name;
-    // const department_id = request.body.department_id;
-    const { name, department_id} = request.body;
+    console.log(request);
+    const name = request.body.name;
+    const department_id = request.body.department_id;
+    // const { name, department_id} = request.body;
 
     if(!name || !department_id) return response.status(500).send('Please provide both name and department_id');
     
@@ -78,7 +80,7 @@ app.put('/employees/:id', async (request, response) => {
     const connection = await pool.getConnection();
     const id = request.params.id;
     const name = request.body.name;
-    
+
     if(!name) return response.status(500).send('Please provide a name to update');
 
     try{

@@ -1,0 +1,10 @@
+<div *ngIf="users">
+    <ul>
+        <li *ngFor="let user of users">
+            <a [routerLink]="['/users', user.id]">
+            {{user.name}} {{ user.id}}
+            </a>
+        </li>
+    </ul>
+   {{ description }}
+</div>

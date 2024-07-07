@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AuthServiceService } from '../auth-service.service';
 
 @Component({
   selector: 'app-sign-up-validation',
@@ -10,15 +11,20 @@ export class SignUpValidationComponent {
   signUpDetails = {
     email: '',
     password: '',
+    confirm_password: '',
     first_name: '',
     last_name: '',
     gender: '',
   }
 
+  authService: AuthServiceService = inject(AuthServiceService);
+
   onSubmit(form:any){
-    console.log('HERE');
+    
     if(form.valid){
-      console.log('Form', form);
+      this.authService.signUp(form.form.value).subscribe((result:any) => {
+        console.log(result);        
+       }) 
     }
   }
 
